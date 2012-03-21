@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>au.edu.uq.cmm</groupId>
+	<artifactId>tomcat-extras</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Tomcat extensions</name>
+	<description>A small collection of extension classes for Apache Tomcat</description>
+	<organization>
+		<name>Centre for Microscopy and Microanalysis</name>
+		<url>http://uq.edu.au/nanoworld</url>
+	</organization>
+	<inceptionYear>March 2012</inceptionYear>
+	<contributors>
+		<contributor>
+			<name>Stephen Crawley</name>
+		</contributor>
+	</contributors>
+	<licenses>
+		<license>
+			<name>Apache 2.0</name>
+		</license>
+	</licenses>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+			<version>7.0.26</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>juli</artifactId>
+			<version>6.0.35</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>catalina</artifactId>
+			<version>6.0.35</version>
+		</dependency>
+	</dependencies>
+</project>
