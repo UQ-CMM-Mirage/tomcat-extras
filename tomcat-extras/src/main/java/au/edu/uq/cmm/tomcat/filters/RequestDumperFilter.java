@@ -62,6 +62,15 @@ public class RequestDumperFilter implements Filter {
         "Not available. Non-http request.";
     private static final String NON_HTTP_RES_MSG =
         "Not available. Non-http response.";
+    
+    protected static final String PARAM_FILTER_PARAMETER = 
+            "paramFilter";
+    protected static final String COOKIE_FILTER_PARAMETER = 
+            "cookieFilter";
+    protected static final String REQUEST_HEADER_FILTER_PARAMETER = 
+            "requestHeaderFilter";
+    protected static final String RESPONSE_HEADER_FILTER_PARAMETER = 
+            "responseHeaderFilter";
 
     private static final ThreadLocal<Timestamp> timestamp =
             new ThreadLocal<Timestamp>() {
@@ -353,7 +362,20 @@ public class RequestDumperFilter implements Filter {
     }
 
     public void init(FilterConfig filterConfig) throws ServletException {
-        // NOOP
+        if (filterConfig.getInitParameter(PARAM_FILTER_PARAMETER) != null) {
+            setParamFilter(filterConfig.getInitParameter(PARAM_FILTER_PARAMETER));
+        }
+        if (filterConfig.getInitParameter(COOKIE_FILTER_PARAMETER) != null) {
+            setCookieFilter(filterConfig.getInitParameter(COOKIE_FILTER_PARAMETER));
+        }
+        if (filterConfig.getInitParameter(REQUEST_HEADER_FILTER_PARAMETER) != null) {
+            setRequestHeaderFilter(filterConfig.getInitParameter(
+                    REQUEST_HEADER_FILTER_PARAMETER));
+        }
+        if (filterConfig.getInitParameter(RESPONSE_HEADER_FILTER_PARAMETER) != null) {
+            setResponseHeaderFilter(filterConfig.getInitParameter(
+                    RESPONSE_HEADER_FILTER_PARAMETER));
+        }
     }
 
     public void destroy() {
