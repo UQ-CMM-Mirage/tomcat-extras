@@ -54,7 +54,7 @@ import org.apache.juli.logging.Log;
  * <p>This Valve may be attached to any Container, depending on the granularity
  * of the logging you wish to perform.</p>
  *
- * @author Craig R. McClanahan (of RequestDumperValve)
+ * @author Craig R. McClanahan (original RequestDumperValve)
  * @author Stephen Crawley
  */
 
