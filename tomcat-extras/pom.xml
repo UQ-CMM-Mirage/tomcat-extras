@@ -39,4 +39,7 @@
 			<version>6.0.35</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<finalName>tomcat-extras</finalName>
+	</build>
 </project>
